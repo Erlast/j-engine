@@ -3,5 +3,6 @@
   "description": "It's an J-Engine for developing",
   "require": {
     "php": ">=5.4.0"
-  }
+  },
+  "minimum-stability": "dev"
 }
