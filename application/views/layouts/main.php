@@ -8,10 +8,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
-
+    <title><?=\components\Html::instance()->title;?></title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- Bootstrap -->
-    <link href="/vendors/bootstrap/css/bootstrap-color.min.css" rel="stylesheet">
+    <link href="/assets/templates/main/css/bootstrap-color.min.css" rel="stylesheet">
 
     <link href="/assets/templates/main/css/style.css" rel="stylesheet">
 
@@ -46,16 +47,14 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a
-            mostly barebones HTML document.</p>
+        <?=$data['content'];?>
     </div>
 
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/vendors/jquery/jquery-3.2.1.min.js"></script>
+<script src="/vendor/components/jquery/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/components/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

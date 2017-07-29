@@ -2,3 +2,10 @@
 www/assets/common/fonts/
 www/assets/common/images/
 application/config/db_params.php
+www/vendor
+composer.lock
+composer.phar
+application/models/
+www/vendor/
+www/assets/templates/main/img/
+www/assets/templates/main/js/
