@@ -1,0 +1,7 @@
+{
+  "name": "j-engine/basic",
+  "description": "It's an J-Engine for developing",
+  "require": {
+    "php": ">=5.4.0"
+  }
+}
