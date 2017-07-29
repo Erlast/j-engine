@@ -2,7 +2,9 @@
   "name": "j-engine/basic",
   "description": "It's an J-Engine for developing",
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=5.4.0",
+    "bower-asset/jquery": "3.2.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
+    "bower-asset/jquery.inputmask": "~3.2.2 | ~3.3.5"
   },
   "minimum-stability": "dev"
 }
