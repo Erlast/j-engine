@@ -20,23 +20,12 @@ class App
     public static $module;
     public $defaultRote = 'site';
     public $defaultAction = 'index';
-    protected static $instance;
-
-    public static function instance($config = [])
-    {
-
-        if (!isset(self::$instance)) {
-            self::$instance = new self($config);
-        }
-        return self::$instance;
-    }
 
     public function __construct($config)
     {
         foreach ($config as $name => $value) {
             $this->$name = $value;
         }
-
         return $this;
     }
 

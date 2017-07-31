@@ -11,5 +11,6 @@ if (!require_once(APP_ROOT . "/Boot.php")) {
 }
 $config = require(APP_ROOT. '/config/main.php');
 
-\components\App::instance($config)->run();
+\components\Core::$app = new \components\App($config);
+\components\Core::$app->run();
 

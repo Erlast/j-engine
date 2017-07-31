@@ -44,6 +44,7 @@ abstract class Model
     private $_final_query = null;
     private $_pk = 'id';
     private $_cache = null;
+    public $prefix;
 
     function __construct($pk = false)
     {

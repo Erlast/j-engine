@@ -14,7 +14,7 @@ class Db
 {
     public static function getConnection()
     {
-        $params = App::instance()->db;
+        $params = Core::$app->db;
         $dsn    = $params['dsn'] . ";charset=" . $params['charset'];
         $db     = new PDO($dsn, $params['user'], $params['password']);
         return $db;

@@ -14,17 +14,17 @@ abstract class Controller
 
     public function render($file, $data = [], $layout = "")
     {
-        $content = ($this->renderContent($file, $data));
-        $render_layout  = $this->findLayoutFile($layout);
+        $content       = ($this->renderContent($file, $data));
+        $render_layout = $this->findLayoutFile($layout);
         return $this->findFile($render_layout, ['content' => $content]);
     }
 
     private function renderContent($file, $data = [])
     {
         if (App::$module) {
-            $path = App::instance()->basePath . DIRECTORY_SEPARATOR . "modules" . DIRECTORY_SEPARATOR . App::$module . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . $file . ".php";
+            $path = Core::$app->basePath . DIRECTORY_SEPARATOR . "modules" . DIRECTORY_SEPARATOR . App::$module . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . $file . ".php";
         } else {
-            $path = App::instance()->basePath . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . $file . ".php";
+            $path = Core::$app->basePath . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . $file . ".php";
         }
 
         return $this->findFile($path, $data);
@@ -33,12 +33,12 @@ abstract class Controller
     private function findLayoutFile($layout = "")
     {
         if ($layout) {
-            App::instance()->layout = $layout;
+            Core::$app->layout = $layout;
         }
-        if (!isset(App::instance()->layout)) {
+        if (!isset(Core::$app->layout)) {
             return false;
         }
-        $file = App::instance()->basePath . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . "layouts" . DIRECTORY_SEPARATOR . App::instance()->layout;
+        $file = Core::$app->basePath . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . "layouts" . DIRECTORY_SEPARATOR . Core::$app->layout;
 
         if (pathinfo($file, PATHINFO_EXTENSION) !== '') {
             return $file;
@@ -50,7 +50,7 @@ abstract class Controller
     function renderTemplate()
     {
 
-        $file = App::instance()->basePath . "/views/layouts/" . App::instance()->layout . ".php";
+        $file = Core::$app->basePath . "/views/layouts/" . Core::$app->layout . ".php";
         if ($this->isFile($file)) {
             $this->render($file);
         } else {
